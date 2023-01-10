@@ -16,5 +16,6 @@ export default defineConfig({
             remarkGfm, remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle,
         ],
         rehypePlugins: [rehypeKatex, rehypeEmbeddedLink]
-    }
+    },
+    site: "https://diary.fabon.info"
 })

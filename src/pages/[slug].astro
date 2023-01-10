@@ -14,20 +14,21 @@ export async function getStaticPaths() {
             },
             props: {
                 post,
-                title: post.frontmatter['title'] ?? getTitleFromSlug(slug)
+                title: post.frontmatter['title'] ?? getTitleFromSlug(slug),
+                path: `/${slug}/`
             }
         })
     })
 }
 
 const { Content } = Astro.props.post
-const { title } = Astro.props
+const { title, path } = Astro.props
 
 const components = {
     a: Anchor
 }
 ---
-<Layout title={title}>
+<Layout title={title} path={path}>
     <main>
         <article>
             <h1>{ title }</h1>
