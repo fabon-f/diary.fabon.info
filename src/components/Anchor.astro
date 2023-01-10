@@ -1,0 +1,8 @@
+---
+interface Props {
+    'data-embed-link'?: string
+}
+
+const props = Astro.props
+---
+<a {...props}><slot /></a>

@@ -1,0 +1,38 @@
+---
+import { getSlugFromPath, getTitleFromSlug } from '../lib/utils'
+import Layout from '../layouts/Layout.astro'
+import Anchor from '../components/Anchor.astro'
+
+export async function getStaticPaths() {
+    const posts = await Astro.glob('../posts/*.mdx')
+
+    return posts.map(post => {
+        const slug = getSlugFromPath(post.file)
+        return ({
+            params: {
+                slug
+            },
+            props: {
+                post,
+                title: post.frontmatter['title'] ?? getTitleFromSlug(slug)
+            }
+        })
+    })
+}
+
+const { Content } = Astro.props.post
+const { title } = Astro.props
+
+const components = {
+    a: Anchor
+}
+---
+<Layout title={title}>
+    <main>
+        <article>
+            <h1>{ title }</h1>
+            <Content components={components} />
+        </article>
+        <a href="/">ホームに戻る</a>
+    </main>
+</Layout>
