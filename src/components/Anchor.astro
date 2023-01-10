@@ -1,8 +1,11 @@
 ---
+import LinkCard from './LinkCard.astro'
+
 interface Props {
+    href?: string
     'data-embed-link'?: string
 }
 
 const props = Astro.props
 ---
-<a {...props}><slot /></a>
+{ props.href && typeof props['data-embed-link'] === 'string' ? <LinkCard url={props.href} /> : <a {...props}><slot /></a> }
