@@ -3,9 +3,10 @@ export interface Props {
 	title: string
     path: string
     description?: string
+    disableOgp?: boolean
 }
 
-const { title, description, path } = Astro.props
+const { title, description, path, disableOgp } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -16,12 +17,14 @@ const { title, description, path } = Astro.props
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 
-        <meta name="description" content={description || "ふぁぼんの週記"} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description || "ふぁぼんの週記"} />
-        <meta property="og:url" content={new URL(path, Astro.site).toString()} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@syobon_hinata" />
+        { !disableOgp && <>
+            <meta name="description" content={description || "ふぁぼんの週記"} />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description || "ふぁぼんの週記"} />
+            <meta property="og:url" content={new URL(path, Astro.site).toString()} />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:site" content="@syobon_hinata" />
+        </> }
         <title>{title}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
