@@ -8,6 +8,7 @@ import remarkMath from 'remark-math'
 import remarkDendenRuby from 'remark-denden-ruby'
 import remarkFootnoteTitle from './src/lib/remark-plugins/footnote-title'
 import rehypeKatex from 'rehype-katex'
+import rehypeImgSize from 'rehype-img-size'
 import rehypeEmbeddedLink from './src/lib/rehype-plugins/mark-embedded-link'
 
 // https://astro.build/config
@@ -17,7 +18,11 @@ export default defineConfig({
         remarkPlugins: [
             remarkGfm, remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle,
         ],
-        rehypePlugins: [rehypeKatex, rehypeEmbeddedLink]
+        rehypePlugins: [
+            rehypeKatex,
+            [rehypeImgSize as any, { dir: 'public' }],
+            rehypeEmbeddedLink
+        ]
     },
     site: "https://diary.fabon.info"
 })

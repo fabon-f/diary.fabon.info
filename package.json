@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "metadata-scraper": "^0.2.61",
+    "rehype-img-size": "^1.0.1",
     "rehype-katex": "^6.0.2",
     "remark-breaks": "^3.0.2",
     "remark-denden-ruby": "^0.2.0",
