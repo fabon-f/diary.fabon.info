@@ -31,9 +31,25 @@ const components = {
 <Layout title={title} path={path}>
     <main>
         <article>
-            <h1>{ title }</h1>
-            <Content components={components} />
+            <Content components={components} title={title} />
         </article>
-        <a href="/">ホームに戻る</a>
     </main>
 </Layout>
+
+<style>
+    article :global(h1) {
+        font-size: 2em;
+        text-align: center;
+    }
+    article > :global(* + *) {
+        margin-block-start: 1rem;
+    }
+    article > :global(.footnotes) {
+        margin-block-start: 3.5em;
+        font-size: 0.9em;
+        border-block-start: 1px solid #CCC;
+    }
+    article :global(h2), article :global(h3) {
+        border-block-end: 1px solid #CCC;
+    }
+</style>

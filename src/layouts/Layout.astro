@@ -33,9 +33,14 @@ const { title, description, path, disableOgp } = Astro.props
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
 	</head>
 	<body>
+        <header>
+            <h1><a href="/" class="link-top">Hebdomadary</a></h1>
+            <p>ふぁぼんの週記</p>
+        </header>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	html {
 		font-family: 'Roboto', sans-serif;
@@ -53,5 +58,21 @@ const { title, description, path, disableOgp } = Astro.props
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border-width: 0;
+    }
+    main {
+        max-width: 1000px;
+        margin: auto;
+    }
+</style>
+
+<style>
+    header {
+        text-align: center;
+        margin-block-end: 4rem;
+    }
+    .link-top {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.5rem;
     }
 </style>
