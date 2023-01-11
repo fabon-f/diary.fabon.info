@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
+
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import remarkMath from 'remark-math'
@@ -10,7 +12,7 @@ import rehypeEmbeddedLink from './src/lib/rehype-plugins/mark-embedded-link'
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx()],
+    integrations: [mdx(), sitemap()],
     markdown: {
         remarkPlugins: [
             remarkGfm, remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle,
