@@ -58,6 +58,18 @@ const components = {
         max-width: 100%;
         height: auto;
     }
+    article :global([data-rehype-pretty-code-title]) {
+        font-family: ui-monospace, monospace;
+        /* https://www.nordtheme.com/docs/colors-and-palettes */
+        background-color: #4c566a;
+        color: #eceff4;
+        padding: 0.3rem 1rem;
+        font-size: 0.9em;
+    }
+    article :global([data-rehype-pretty-code-fragment]) {
+        border-radius: 0.3rem;
+        overflow: hidden;
+    }
     article :global([data-rehype-pretty-code-fragment] pre) {
         margin: 0;
     }
@@ -78,6 +90,6 @@ const components = {
         width: 1.5rem;
         margin-right: 1rem;
         text-align: right;
-        color: gray;
+        color: darkgray;
     }
 </style>
