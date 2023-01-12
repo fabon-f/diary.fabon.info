@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
+import image from '@astrojs/image'
 
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
@@ -14,7 +15,9 @@ import rehypeEmbeddedLink from './src/lib/rehype-plugins/mark-embedded-link'
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx(), sitemap()],
+    integrations: [mdx(), sitemap(), image({
+        serviceEntryPoint: '@astrojs/image/sharp'
+    })],
     markdown: {
         syntaxHighlight: false,
         remarkPlugins: [

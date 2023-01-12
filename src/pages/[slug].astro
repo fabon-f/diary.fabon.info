@@ -2,6 +2,7 @@
 import { getSlugFromPath, getTitleFromSlug } from '../lib/utils'
 import Layout from '../layouts/Layout.astro'
 import Anchor from '../components/Anchor.astro'
+import Image from '../components/Image.astro'
 
 export async function getStaticPaths() {
     const posts = await Astro.glob('../posts/*.mdx')
@@ -25,7 +26,8 @@ const { Content } = Astro.props.post
 const { title, path } = Astro.props
 
 const components = {
-    a: Anchor
+    a: Anchor,
+    img: Image
 }
 ---
 <Layout title={title} path={path}>
@@ -51,6 +53,10 @@ const components = {
     }
     article :global(h2), article :global(h3) {
         border-block-end: 1px solid #CCC;
+    }
+    article :global(img) {
+        max-width: 100%;
+        height: auto;
     }
     article :global([data-rehype-pretty-code-fragment] pre) {
         margin: 0;

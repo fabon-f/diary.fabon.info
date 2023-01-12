@@ -1,0 +1,33 @@
+---
+import { Picture } from '@astrojs/image/components'
+
+interface Props {
+    src: string
+    alt: string
+    originalWidth: string | number
+    originalHeight: string | number
+    maxWidth?: string | number
+}
+
+const toInt = (value: string | number) => typeof value === 'string' ? parseInt(value) : value
+const calculateWidths = (widths: number[], max: number) => (
+    [...new Set(
+        Math.max(...widths) <= max ? widths : [...widths, max].filter(n => n <= max)
+    )]
+)
+
+const { src, alt, maxWidth } = Astro.props
+const originalWidth = toInt(Astro.props.originalWidth)
+const originalHeight = toInt(Astro.props.originalHeight)
+
+const sizes = maxWidth === undefined ?
+    `(min-width: ${originalWidth}px) ${originalWidth}px, 100vw` :
+    `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`
+
+const widths = calculateWidths([1200, 1500], originalWidth)
+const formats = ['webp']
+
+const displayWidth = maxWidth === undefined ? originalWidth : Math.min(toInt(maxWidth), originalWidth)
+const displayHeight = displayWidth * originalHeight / originalWidth
+---
+<Picture src={src} alt={alt} sizes={sizes} widths={widths} aspectRatio={originalWidth / originalHeight} formats={formats} width={displayWidth} height={displayHeight} />
