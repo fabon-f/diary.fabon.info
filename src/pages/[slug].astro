@@ -52,4 +52,26 @@ const components = {
     article :global(h2), article :global(h3) {
         border-block-end: 1px solid #CCC;
     }
+    article :global([data-rehype-pretty-code-fragment] pre) {
+        margin: 0;
+    }
+    article :global([data-rehype-pretty-code-fragment] pre > code) {
+        display: grid;
+        padding: 1rem;
+    }
+    article :global([data-rehype-pretty-code-fragment] code[data-line-numbers]) {
+        padding-inline-start: 10px;
+        counter-reset: line;
+    }
+    article :global([data-rehype-pretty-code-fragment] code[data-line-numbers] > .line::before) {
+        counter-increment: line;
+        content: counter(line);
+
+        font-family: ui-monospace, monospace;
+        display: inline-block;
+        width: 1.5rem;
+        margin-right: 1rem;
+        text-align: right;
+        color: gray;
+    }
 </style>
