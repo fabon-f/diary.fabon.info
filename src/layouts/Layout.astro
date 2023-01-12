@@ -44,6 +44,15 @@ const { title, description, path, disableOgp, disableAnalytics } = Astro.props
 </html>
 
 <style is:global>
+    @media (prefers-color-scheme: dark) {
+        html {
+            background-color: #111;
+            color: #FFF;
+        }
+        a {
+            color: #88c0d0;
+        }
+    }
 	html {
 		font-family: 'Roboto', sans-serif;
         line-height: 1.5;
