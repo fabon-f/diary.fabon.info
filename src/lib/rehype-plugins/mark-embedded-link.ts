@@ -13,8 +13,8 @@ export default function plugin() {
             if (child.children[0].type !== 'text') { return }
             if (child.properties.href === child.children[0].value) {
                 child.properties['dataEmbedLink'] = ''
+                parent.children[index] = child
             }
-            parent.children[index] = child
         })
     }
     return transformer
