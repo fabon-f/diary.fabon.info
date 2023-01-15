@@ -1,0 +1,25 @@
+---
+import { fetchTwitterEmbed } from '../lib/cache-metadata'
+
+interface Props {
+    url: string
+}
+
+const { url } = Astro.props
+const html = await fetchTwitterEmbed(url)
+---
+<div set:html={html}></div>
+
+<script>
+    const loadTwitterWidget = () => {
+        const script = document.createElement('script')
+        script.async = true
+        script.src = 'https://platform.twitter.com/widgets.js'
+        document.head.appendChild(script)
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTwitterWidget)
+    } else {
+        loadTwitterWidget()
+    }
+</script>

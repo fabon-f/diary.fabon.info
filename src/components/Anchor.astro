@@ -1,5 +1,6 @@
 ---
 import LinkCard from './LinkCard.astro'
+import TwitterEmbed from './TwitterEmbed.astro'
 
 interface Props {
     href?: string
@@ -8,4 +9,8 @@ interface Props {
 
 const props = Astro.props
 ---
-{ props.href && typeof props['data-embed-link'] === 'string' ? <LinkCard url={props.href} /> : <a {...props}><slot /></a> }
+{ props.href && typeof props['data-embed-link'] === 'string' ? (
+    new URL(props.href).host === 'twitter.com' ?
+        <TwitterEmbed url={props.href} /> :
+        <LinkCard url={props.href} />
+) : <a {...props}><slot /></a> }

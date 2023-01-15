@@ -110,3 +110,8 @@ main {
         background-color: #2e3440;
     }
 }
+
+/* Twitter widget */
+.twitter-tweet {
+    max-width: 550px;
+}

@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "fetch-site-metadata": "^0.1.2",
+    "html-rewriter-wasm": "^0.4.1",
     "rehype-img-size": "^1.0.1",
     "rehype-katex": "^6.0.2",
     "rehype-pretty-code": "^0.9.2",
