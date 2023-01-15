@@ -8,10 +8,11 @@ interface Props {
 const { url } = Astro.props
 const html = await fetchTwitterEmbed(url)
 ---
-<div set:html={html}></div>
+<div class="twitter-embed-wrapper" set:html={html}></div>
 
 <script>
     const loadTwitterWidget = () => {
+        if (document.querySelectorAll('.twitter-embed-wrapper').length === 0) { return }
         const script = document.createElement('script')
         script.async = true
         script.src = 'https://platform.twitter.com/widgets.js'
