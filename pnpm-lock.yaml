@@ -7,7 +7,7 @@ specifiers:
   '@types/node': ^18.11.18
   astro: ^1.9.0
   date-fns: ^2.29.3
-  fetch-site-metadata: ^0.1.0
+  fetch-site-metadata: ^0.1.1
   rehype-img-size: ^1.0.1
   rehype-katex: ^6.0.2
   rehype-pretty-code: ^0.8.1
@@ -28,7 +28,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.11.18
-  fetch-site-metadata: 0.1.0
+  fetch-site-metadata: 0.1.1
   rehype-img-size: 1.0.1
   rehype-katex: 6.0.2
   rehype-pretty-code: 0.8.1_shiki@0.12.1
@@ -1605,8 +1605,8 @@ packages:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
 
-  /fetch-site-metadata/0.1.0:
-    resolution: {integrity: sha512-aHHYCQsV3MfMp/Y/RX2dyXRt16xzTYx6gX8TuR6EOrttYMeXb6d/xXt/fgOZhJ+ZVi6rSKQLZNy+8dkO5rdnZw==}
+  /fetch-site-metadata/0.1.1:
+    resolution: {integrity: sha512-2l4ugXXyx/8yBh/YxqS8V5g4kGbngHRHf8v74hr1yBYqdR07n84X4FoSc8y6GdCFM89WmfpSMMIZr+dztNu4ww==}
     engines: {node: '>=16.0'}
     dependencies:
       '@types/node': 18.11.18
