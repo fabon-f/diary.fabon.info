@@ -64,7 +64,7 @@ main {
     margin: auto;
 }
 .cyrillic, .greek {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Calibri, sans-serif;
 }
 
 
