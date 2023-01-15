@@ -13,6 +13,7 @@ import rehypeKatex from 'rehype-katex'
 import rehypeImgSize from 'rehype-img-size'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeEmbeddedLink from './src/lib/rehype-plugins/mark-embedded-link'
+import rehypeCyrillicGreek from './src/lib/rehype-plugins/cyrillic-greek'
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,7 +36,8 @@ export default defineConfig({
                         node.children = [{ type: 'text', value: ' ' }]
                     }
                 }
-            }]
+            }],
+            rehypeCyrillicGreek
         ]
     },
     site: "https://diary.fabon.info"

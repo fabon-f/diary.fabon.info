@@ -36,7 +36,6 @@
     }
 }
 html {
-    font-family: 'Roboto', sans-serif;
     line-height: 1.5;
 }
 body {
@@ -63,6 +62,9 @@ pre {
 main {
     max-width: 1000px;
     margin: auto;
+}
+.cyrillic, .greek {
+    font-family: 'Open Sans', sans-serif;
 }
 
 

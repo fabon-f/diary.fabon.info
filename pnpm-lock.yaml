@@ -17,6 +17,7 @@ specifiers:
   remark-math: ^5.1.1
   sharp: ^0.31.3
   shiki: ^0.12.1
+  unist-builder: ^3.0.0
   unist-util-visit: ^4.1.1
 
 dependencies:
@@ -38,6 +39,7 @@ devDependencies:
   remark-math: 5.1.1
   sharp: 0.31.3
   shiki: 0.12.1
+  unist-builder: 3.0.0
   unist-util-visit: 4.1.1
 
 packages:
