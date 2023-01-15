@@ -73,9 +73,10 @@ const components = {
     article :global([data-rehype-pretty-code-fragment] pre) {
         margin: 0;
     }
-    article :global([data-rehype-pretty-code-fragment] pre > code) {
+    article :global(pre > code) {
         display: grid;
         padding: 1rem;
+        overflow-x: scroll;
     }
     article :global([data-rehype-pretty-code-fragment] code[data-line-numbers]) {
         padding-inline-start: 10px;
@@ -87,9 +88,15 @@ const components = {
 
         font-family: ui-monospace, monospace;
         display: inline-block;
-        width: 1.5rem;
+        width: 1rem;
         margin-right: 1rem;
         text-align: right;
         color: darkgray;
+    }
+    article :global([data-rehype-pretty-code-fragment] code[data-line-numbers-max-digits="2"] > .line::before) {
+        width: 1.5rem;
+    }
+    article :global([data-rehype-pretty-code-fragment] code[data-line-numbers-max-digits="3"] > .line::before) {
+        width: 2rem;
     }
 </style>
