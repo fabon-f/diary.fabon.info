@@ -13,6 +13,6 @@ const { src, alt, width, height } = Astro.props
 ---
 {
     width === undefined || height === undefined  ?
-        <img src={src} alt={alt} width={width} height={height}> :
+        <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async"> :
         <OptimizedPicture src={src} alt={alt} originalWidth={width} originalHeight={height} maxWidth="1000" />
 }
