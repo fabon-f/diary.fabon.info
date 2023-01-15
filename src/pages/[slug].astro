@@ -32,7 +32,7 @@ const components = {
 ---
 <Layout title={title} path={path}>
     <main>
-        <article>
+        <article class="prose">
             <Content components={components} title={title} />
         </article>
     </main>
@@ -43,24 +43,15 @@ const components = {
         margin-block-end: 2.5rem;
     }
     article :global(h1) {
-        font-size: 2em;
         text-align: center;
-    }
-    article > :global(* + *) {
-        margin-block-start: 1.5rem;
     }
     article > :global(.footnotes) {
         margin-block-start: 3.5em;
         font-size: 0.9em;
-        border-block-start: 1px solid #CCC;
+        border-block-start: 1px solid var(--border-color);
     }
     article :global(h2), article :global(h3) {
-        border-block-end: 1px solid #CCC;
-        margin-block-start: 1.8em;
-    }
-    article :global(img) {
-        max-width: 100%;
-        height: auto;
+        border-block-end: 1px solid var(--border-color);
     }
     article :global([data-rehype-pretty-code-title]) {
         font-family: ui-monospace, monospace;
@@ -102,20 +93,5 @@ const components = {
     }
     article :global([data-rehype-pretty-code-fragment] code[data-line-numbers-max-digits="3"] > .line::before) {
         width: 2rem;
-    }
-    article :global(p code) {
-        padding: 0.2rem;
-        border-radius: 0.2rem;
-        background-color: #eceff4;
-    }
-    @media (prefers-color-scheme: dark) {
-        article :global(p code) {
-            background-color: #2e3440;
-        }
-    }
-    article :global(blockquote) {
-        margin-inline: 0;
-        border-inline-start: 4px solid rgba(129, 161, 193, 0.5);
-        padding-inline-start: 1rem;
     }
 </style>

@@ -1,0 +1,110 @@
+/* https://csstools.github.io/sanitize.css/ */
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+:where(dl, ol, ul) :where(dl, ol, ul) {
+    margin: 0;
+}
+:where(hr) {
+    color: inherit;
+    height: 0;
+}
+
+
+:root {
+    --border-color: #CCC;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --border-color: #555;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html {
+        background-color: #FFF;
+        color: #333;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: #111;
+        color: #d8dee9;
+    }
+    a {
+        color: #66BBFF;
+    }
+}
+html {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+body {
+    margin: 0;
+}
+code {
+    font-family: monospace;
+    font-size: 1em
+}
+pre {
+    font-size: 1em;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* article */
+:where(.prose > * + *) {
+    margin-block-start: 1.5rem;
+}
+
+:where(.prose h1) {
+    font-size: 2em;
+}
+:where(.prose h2) {
+    font-size: 1.5em;
+    margin-block-start: 1.8em;
+}
+:where(.prose h3) {
+    font-size: 1.2em;
+    margin-block-start: 1.5em;
+}
+
+:where(.prose img) {
+    max-width: 100%;
+    height: auto;
+}
+
+:where(.prose blockquote) {
+    margin-inline: 0;
+    border-inline-start: 4px solid rgba(129, 161, 193, 0.5);
+    padding-inline-start: 1rem;
+}
+
+:where(.prose li) {
+    margin-block: 0.3em;
+}
+
+:where(.prose code:not(pre > code)) {
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    background-color: #eceff4;
+}
+@media (prefers-color-scheme: dark) {
+    :where(.prose code:not(pre > code)) {
+        background-color: #2e3440;
+    }
+}

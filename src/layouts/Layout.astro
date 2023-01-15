@@ -44,46 +44,7 @@ const { title, description, path, disableOgp, disableAnalytics } = Astro.props
 </html>
 
 <style is:global>
-    @media (prefers-color-scheme: light) {
-        html {
-            background-color: #FFF;
-            color: #333;
-        }
-    }
-    @media (prefers-color-scheme: dark) {
-        html {
-            background-color: #111;
-            color: #d8dee9;
-        }
-        a {
-            color: #66BBFF;
-        }
-    }
-	html {
-		font-family: 'Roboto', sans-serif;
-        line-height: 1.5;
-	}
-    body {
-        margin: 0;
-    }
-	code {
-		font-family: monospace;
-	}
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-    }
-    main {
-        max-width: 1000px;
-        margin: auto;
-    }
+    @import '../styles/base.css';
 </style>
 
 <style>
