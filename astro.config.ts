@@ -8,6 +8,7 @@ import remarkBreaks from 'remark-breaks'
 import remarkMath from 'remark-math'
 import remarkDendenRuby from 'remark-denden-ruby'
 import remarkFootnoteTitle from './src/lib/remark-plugins/footnote-title'
+import remarkPlainCodeblock from './src/lib/remark-plugins/plain-codeblock'
 import rehypeKatex from 'rehype-katex'
 import rehypeImgSize from 'rehype-img-size'
 import rehypePrettyCode from 'rehype-pretty-code'
@@ -21,7 +22,7 @@ export default defineConfig({
     markdown: {
         syntaxHighlight: false,
         remarkPlugins: [
-            remarkGfm, remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle,
+            remarkGfm, remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle, remarkPlainCodeblock
         ],
         rehypePlugins: [
             rehypeKatex,
