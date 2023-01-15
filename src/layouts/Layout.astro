@@ -8,6 +8,12 @@ export interface Props {
 }
 
 const { title, description, path, disableOgp, disableAnalytics } = Astro.props
+
+declare global {
+    interface Window {
+        goatcounter: any
+    }
+}
 ---
 
 <!DOCTYPE html>
@@ -32,6 +38,10 @@ const { title, description, path, disableOgp, disableAnalytics } = Astro.props
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+        <script>
+            if (location.hostname.endsWith('pages.dev')) { window.goatcounter = { path: () => null } }
+        </script>
         { import.meta.env.PROD && (!disableAnalytics) && <script data-goatcounter="https://fabon-diary.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> }
 	</head>
 	<body>
