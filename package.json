@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "metadata-scraper": "^0.2.61",
+    "fetch-site-metadata": "^0.1.0",
     "rehype-img-size": "^1.0.1",
     "rehype-katex": "^6.0.2",
     "rehype-pretty-code": "^0.8.1",

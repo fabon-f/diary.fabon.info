@@ -1,5 +1,5 @@
 ---
-import getMetaData from 'metadata-scraper'
+import fetchSiteMetadata from 'fetch-site-metadata'
 
 interface Props {
     url: string
@@ -7,7 +7,7 @@ interface Props {
 
 const { url } = Astro.props
 
-const metadata = await getMetaData(url, { forceImageHttps: false })
+const metadata = await fetchSiteMetadata(url)
 ---
 <a href={url} class="container">
     <div class="info">
@@ -18,7 +18,7 @@ const metadata = await getMetaData(url, { forceImageHttps: false })
             { new URL(url).host }
         </div>
     </div>
-    { metadata.image && <img src={metadata.image} alt="" class="img" loading="lazy" /> }
+    { metadata.image && <img src={metadata.image.src} alt={metadata.image.alt ?? ""} class="img" loading="lazy" width={metadata.image.width} height={metadata.image.height} /> }
 </a>
 
 <style>
@@ -65,5 +65,6 @@ const metadata = await getMetaData(url, { forceImageHttps: false })
     }
     .img {
         height: 100%;
+        width: auto;
     }
 </style>
