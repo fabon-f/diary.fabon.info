@@ -40,7 +40,9 @@ declare global {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
 
         <script>
-            if (location.hostname.endsWith('pages.dev')) { window.goatcounter = { path: () => null } }
+            if (location.hostname.endsWith('pages.dev')) {
+                window.goatcounter = { no_onload: true }
+            }
         </script>
         { import.meta.env.PROD && (!disableAnalytics) && <script data-goatcounter="https://fabon-diary.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> }
 	</head>
