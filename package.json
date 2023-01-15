@@ -14,7 +14,7 @@
     "@astrojs/image": "^0.12.1",
     "@astrojs/mdx": "^0.14.0",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.9.0",
+    "astro": "^1.9.2",
     "date-fns": "^2.29.3"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "fetch-site-metadata": "^0.1.1",
     "rehype-img-size": "^1.0.1",
     "rehype-katex": "^6.0.2",
-    "rehype-pretty-code": "^0.8.1",
+    "rehype-pretty-code": "^0.9.2",
     "remark-breaks": "^3.0.2",
     "remark-denden-ruby": "^0.2.0",
     "remark-gfm": "^3.0.1",
