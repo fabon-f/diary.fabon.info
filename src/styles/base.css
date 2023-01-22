@@ -97,7 +97,7 @@ main {
 }
 
 :where(.prose li) {
-    margin-block: 0.3em;
+    margin-block: 0.6em;
 }
 
 :where(.prose code:not(pre > code)) {
