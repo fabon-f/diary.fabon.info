@@ -5,7 +5,7 @@ export default function plugin() {
         const footnotes = {} as Record<string, string>
         visit(tree, 'footnoteDefinition', n => {
             let content = ''
-            visit(n, 'text', t => {
+            visit(n, ['text', 'inlineCode'], t => {
                 content += t.value
             })
             footnotes[n.identifier] = content
