@@ -1,12 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { getTitleFromSlug, getSlugFromPath } from '../lib/utils'
+import { getArticles } from '../lib/utils'
 
-const mdFiles = Object.keys(import.meta.glob('../posts/*.mdx'))
-const posts = mdFiles.map(f => ({
-    url: `/${getSlugFromPath(f)}/`,
-    title: getTitleFromSlug(getSlugFromPath(f))
-}))
+const posts = getArticles()
 ---
 
 <Layout title="Hebdomadary" path="/">

@@ -1,5 +1,5 @@
 ---
-import { getSlugFromPath, getTitleFromSlug } from '../lib/utils'
+import { getSlugFromPath, getTitleFromSlug, getPrevAndNextArticle } from '../lib/utils'
 import Layout from '../layouts/Layout.astro'
 import Anchor from '../components/Anchor.astro'
 import Image from '../components/Image.astro'
@@ -29,19 +29,30 @@ const components = {
     a: Anchor,
     img: Image
 }
+
+const { prev, next } = getPrevAndNextArticle(new Date(path.split('/')[1]))
 ---
 <Layout title={title} path={path}>
     <main>
         <article class="prose">
             <Content components={components} title={title} />
         </article>
+        <div class="prev-next">
+            <div>
+                <!-- https://iconmonstr.com/angel-left-thin-svg/ -->
+                { next && <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg> }
+                { next && <a href={next.url}>{ next.title }</a> }
+            </div>
+            <div>
+                { prev && <a href={prev.url}>{ prev.title }</a> }
+                <!-- https://iconmonstr.com/angel-right-thin-svg/ -->
+                { prev && <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg> }
+            </div>
+        </div>
     </main>
 </Layout>
 
 <style>
-    article {
-        margin-block-end: 2.5rem;
-    }
     article :global(h1) {
         text-align: center;
     }
@@ -93,5 +104,20 @@ const components = {
     }
     article :global([data-rehype-pretty-code-fragment] code[data-line-numbers-max-digits="3"] > .line::before) {
         width: 2rem;
+    }
+
+    .prev-next {
+        display: flex;
+        margin-block-start: 2.5rem;
+    }
+    .prev-next > * {
+        width: 50%;
+        text-align: center;
+    }
+    .icon {
+        stroke: currentColor;
+        fill: currentColor;
+        height: 0.8em;
+        width: auto;
     }
 </style>
