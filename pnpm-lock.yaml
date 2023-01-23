@@ -7,6 +7,8 @@ specifiers:
   '@types/node': ^18.11.18
   astro: ^1.9.2
   date-fns: ^2.29.3
+  entities: ^4.4.0
+  feed: ^4.2.2
   fetch-site-metadata: ^0.1.2
   html-rewriter-wasm: ^0.4.1
   rehype-img-size: ^1.0.1
@@ -30,6 +32,8 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.11.18
+  entities: 4.4.0
+  feed: 4.2.2
   fetch-site-metadata: 0.1.2
   html-rewriter-wasm: 0.4.1
   rehype-img-size: 1.0.1
@@ -1607,6 +1611,13 @@ packages:
     dependencies:
       format: 0.2.2
     dev: false
+
+  /feed/4.2.2:
+    resolution: {integrity: sha512-u5/sxGfiMfZNtJ3OvQpXcvotFpYkL0n9u9mM2vkui2nGo8b4wvDkJ8gAkYqbA8QpGyFCv3RK0Z+Iv+9veCS9bQ==}
+    engines: {node: '>=0.4.0'}
+    dependencies:
+      xml-js: 1.6.11
+    dev: true
 
   /fetch-blob/3.2.0:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
@@ -4122,6 +4133,13 @@ packages:
 
   /wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+
+  /xml-js/1.6.11:
+    resolution: {integrity: sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==}
+    hasBin: true
+    dependencies:
+      sax: 1.2.4
+    dev: true
 
   /yallist/3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}

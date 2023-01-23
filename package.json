@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "entities": "^4.4.0",
+    "feed": "^4.2.2",
     "fetch-site-metadata": "^0.1.2",
     "html-rewriter-wasm": "^0.4.1",
     "rehype-img-size": "^1.0.1",

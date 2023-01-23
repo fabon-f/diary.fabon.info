@@ -1,4 +1,7 @@
 import { basename, extname } from 'node:path'
+import * as cp from 'node:child_process'
+import { promisify } from 'node:util'
+const execFile = promisify(cp.execFile)
 import { addDays, format } from 'date-fns'
 
 export function startDate(filePath: string) {
@@ -35,4 +38,16 @@ export function getPrevAndNextArticle(date: Date) {
         next: articles.find(a => a.date > date),
         prev: [...articles].reverse().find(a => a.date < date)
     }
+}
+
+export async function getPublishDate(filePath: string, frontmatter: Record<string, any>) {
+    if (frontmatter['date']) {
+        return new Date(frontmatter['date'])
+    }
+    const { stdout } = await execFile('git', ['--no-pager', 'log', '--format=%aI', '--', filePath])
+    const firstCommitDate = stdout.split('\n').filter(l => l !== '').at(-1)
+    if (typeof firstCommitDate === 'string') {
+        return new Date(firstCommitDate)
+    }
+    return addDays(startDate(filePath), 7)
 }
