@@ -13,7 +13,17 @@ const posts = mdFiles.map(f => ({
 	<main>
 		<h1>週記</h1>
         <ul>
-            { posts.map(d => <li><a href={d.url}>{ d.title }</a></li>) }
+            { posts.map(d => <li><a href={d.url}>{ d.title }</a></li>).reverse() }
+        </ul>
+        <h2>過去の週記 (はてなブログ)</h2>
+        <ul>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2021/02/05/043030">週記 (2020/12/21〜27)</a></li>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2020/12/21/103726">週記 (2020/12/14〜20)</a></li>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2020/12/15/231722">週記 (2020/12/7〜13)</a></li>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2020/12/08/000457">週記 (2020/11/30〜12/06)</a></li>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2020/11/30/193052">週記 (2020/11/23〜29)</a></li>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2020/11/23/140255">週記 (2020/11/16〜22)</a></li>
+            <li><a href="https://yuyusuki.hatenablog.com/entry/2020/11/16/214435">週記 (2020/11/9〜15)</a></li>
         </ul>
 	</main>
 </Layout>
