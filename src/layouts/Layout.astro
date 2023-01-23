@@ -47,11 +47,22 @@ declare global {
         { import.meta.env.PROD && (!disableAnalytics) && <script data-goatcounter="https://fabon-diary.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> }
 	</head>
 	<body>
-        <header>
-            <h1><a href="/" class="link-top">Hebdomadary</a></h1>
-            <p>ふぁぼんの週記</p>
-        </header>
-		<slot />
+        <div class="non-footer">
+            <header>
+                <h1><a href="/" class="link-top">Hebdomadary</a></h1>
+                <p>ふぁぼんの週記</p>
+            </header>
+            <slot />
+        </div>
+        <footer>
+            <ul>
+                <li><a href="https://www.fabon.info">Homepage</a></li>
+                <li><a href="https://twitter.com/syobon_hinata">Twitter</a></li>
+                <li><a href="https://github.com/fabon-f">GitHub</a></li>
+                <li><a href="https://github.com/fabon-f/diary.fabon.info">source (GitHub)</a></li>
+            </ul>
+            <p><a href="/">Hebdomadary</a> by ふぁぼん</p>
+        </footer>
 	</body>
 </html>
 
@@ -60,6 +71,14 @@ declare global {
 </style>
 
 <style>
+    html, body {
+        height: 100%;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
     header {
         text-align: center;
         margin-block-end: 4rem;
@@ -68,5 +87,23 @@ declare global {
         color: inherit;
         text-decoration: none;
         font-size: 1.5rem;
+    }
+    .non-footer {
+        margin-block-end: 5rem;
+    }
+    footer {
+        font-size: 0.9em;
+        margin-block-start: auto;
+        text-align: center;
+    }
+    footer ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+    }
+    footer ul, footer p {
+        margin-block: 0.5rem;
     }
 </style>
