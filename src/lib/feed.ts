@@ -1,5 +1,6 @@
 import { escapeUTF8 } from 'entities'
 import { Feed } from 'feed'
+import type { Item } from 'feed'
 import { getTitleFromSlug, getSlugFromPath, getPublishDate } from './utils'
 
 const stringifyStyleAttribute = (style: Record<string, string>) => {
@@ -50,6 +51,7 @@ const vnodeToHtml = (node: any): string => {
 }
 
 type FeedType = 'rss'
+const MAX_ITEMS = 15
 
 export async function generateFeed(site: URL, type: FeedType) {
     const articles = Object.values(import.meta.glob('../posts/*.mdx', { eager: true }))
@@ -70,6 +72,7 @@ export async function generateFeed(site: URL, type: FeedType) {
         copyright: 'CC BY 4.0, ふぁぼん',
         author
     })
+    const feedItems = [] as Item[]
     for (const a of articles as any[]) {
         const slug = getSlugFromPath(a.file)
         const title = a.frontmatter['title'] ?? getTitleFromSlug(slug)
@@ -78,7 +81,7 @@ export async function generateFeed(site: URL, type: FeedType) {
         const description = a.frontmatter['description'] ?? ''
         const date = await getPublishDate(a.file, a.frontmatter)
         if (date.getTime() > Date.now()) { continue }
-        feed.addItem({
+        feedItems.push({
             title,
             id: url,
             link: url,
@@ -88,6 +91,10 @@ export async function generateFeed(site: URL, type: FeedType) {
             date,
             // image: ''
         })
+    }
+    feedItems.sort((a, b) => b.date.getTime() - a.date.getTime())
+    for (const item of feedItems.slice(0, MAX_ITEMS)) {
+        feed.addItem(item)
     }
     if (type === 'rss') {
         return feed.rss2()
