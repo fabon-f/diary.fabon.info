@@ -65,7 +65,7 @@ export async function generateFeed(site: URL, type: FeedType) {
         id: siteString,
         link: siteString,
         language: 'ja',
-        // image: ''
+        image: new URL('/images/fabon.png', site).toString(),
         favicon: new URL('/favicon.ico', site).toString(),
         copyright: 'CC BY 4.0, ふぁぼん',
         author
