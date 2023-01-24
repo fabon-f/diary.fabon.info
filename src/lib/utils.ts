@@ -44,7 +44,7 @@ export async function getPublishDate(filePath: string, frontmatter: Record<strin
     if (frontmatter['date']) {
         return new Date(frontmatter['date'])
     }
-    const { stdout } = await execFile('git', ['--no-pager', 'log', '--format=%aI', '--', filePath])
+    const { stdout } = await execFile('git', ['--no-pager', 'log', '--follow', '--format=%aI', '--', filePath])
     const firstCommitDate = stdout.split('\n').filter(l => l !== '').at(-1)
     if (typeof firstCommitDate === 'string') {
         return new Date(firstCommitDate)
