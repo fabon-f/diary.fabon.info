@@ -40,13 +40,13 @@ const { prev, next } = getPrevAndNextArticle(new Date(path.split('/')[1]))
         <div class="prev-next">
             <div>
                 <!-- https://iconmonstr.com/angel-left-thin-svg/ -->
-                { next && <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg> }
+                { next && <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/></svg> }
                 { next && <a href={next.url}>{ next.title }</a> }
             </div>
             <div>
                 { prev && <a href={prev.url}>{ prev.title }</a> }
                 <!-- https://iconmonstr.com/angel-right-thin-svg/ -->
-                { prev && <svg class="icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg> }
+                { prev && <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/></svg> }
             </div>
         </div>
     </main>
