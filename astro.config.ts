@@ -3,7 +3,6 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import image from '@astrojs/image'
 
-import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
 import remarkMath from 'remark-math'
 import remarkDendenRuby from 'remark-denden-ruby'
@@ -23,7 +22,7 @@ export default defineConfig({
     markdown: {
         syntaxHighlight: false,
         remarkPlugins: [
-            remarkGfm, remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle, remarkPlainCodeblock
+            remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle, remarkPlainCodeblock
         ],
         rehypePlugins: [
             rehypeKatex,

@@ -11,10 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.12.1",
-    "@astrojs/mdx": "^0.14.0",
+    "@astrojs/image": "^0.13.0",
+    "@astrojs/mdx": "^0.15.0",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.9.2",
+    "astro": "^2.0.0",
     "date-fns": "^2.29.3"
   },
   "devDependencies": {
@@ -28,11 +28,10 @@
     "rehype-pretty-code": "^0.9.2",
     "remark-breaks": "^3.0.2",
     "remark-denden-ruby": "^0.2.0",
-    "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "sharp": "^0.31.3",
     "shiki": "^0.12.1",
-    "unist-builder": "^3.0.0",
-    "unist-util-visit": "^4.1.1"
+    "unist-builder": "^3.0.1",
+    "unist-util-visit": "^4.1.2"
   }
 }
