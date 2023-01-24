@@ -5,7 +5,7 @@ import Anchor from '../components/Anchor.astro'
 import Image from '../components/Image.astro'
 
 export async function getStaticPaths() {
-    const posts = await Astro.glob('../posts/*.mdx')
+    const posts = await Astro.glob('../content/diary/*.mdx')
 
     return posts.map(post => {
         const slug = getSlugFromPath(post.file)

@@ -24,7 +24,7 @@ export function getTitleFromSlug(slug: string) {
 }
 
 export function getArticles() {
-    const mdFiles = Object.keys(import.meta.glob('../posts/*.mdx'))
+    const mdFiles = Object.keys(import.meta.glob('../content/diary/*.mdx'))
     return mdFiles.map(f => ({
         date: startDate(f),
         url: `/${getSlugFromPath(f)}/`,

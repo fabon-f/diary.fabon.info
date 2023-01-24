@@ -54,7 +54,7 @@ type FeedType = 'rss'
 const MAX_ITEMS = 15
 
 export async function generateFeed(site: URL, type: FeedType) {
-    const articles = Object.values(import.meta.glob('../posts/*.mdx', { eager: true }))
+    const articles = Object.values(import.meta.glob('../content/diary/*.mdx', { eager: true }))
     const siteString = site.toString()
     const author = {
         name: 'ふぁぼん',
