@@ -1,28 +1,36 @@
 ---
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import { getSlugFromPath, getTitleFromSlug, getPrevAndNextArticle } from '../lib/utils'
 import Layout from '../layouts/Layout.astro'
 import Anchor from '../components/Anchor.astro'
 import Image from '../components/Image.astro'
 
+export interface Props {
+    post: CollectionEntry<"diary">
+    title: string
+    path: string
+}
+
 export async function getStaticPaths() {
-    const posts = await Astro.glob('../content/diary/*.mdx')
+    const posts = await getCollection('diary')
 
     return posts.map(post => {
-        const slug = getSlugFromPath(post.file)
+        const slug = getSlugFromPath(post.id)
         return ({
             params: {
                 slug
             },
             props: {
                 post,
-                title: post.frontmatter['title'] ?? getTitleFromSlug(slug),
+                title: post.data['title'] ?? getTitleFromSlug(slug),
                 path: `/${slug}/`
             }
         })
     })
 }
 
-const { Content } = Astro.props.post
+const { Content } = await Astro.props.post.render()
 const { title, path } = Astro.props
 
 const components = {
@@ -30,7 +38,7 @@ const components = {
     img: Image
 }
 
-const { prev, next } = getPrevAndNextArticle(new Date(path.split('/')[1]))
+const { prev, next } = getPrevAndNextArticle(new Date(path.split('/')[1]!))
 ---
 <Layout title={title} path={path}>
     <main>
