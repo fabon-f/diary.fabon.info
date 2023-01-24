@@ -4,7 +4,7 @@ const diaryCollection = defineCollection({
     schema: z.object({
         title: z.string().optional(),
         description: z.string().optional(),
-        date: z.string().optional()
+        date: z.union([z.date(), z.string()]).optional()
     })
 })
 
