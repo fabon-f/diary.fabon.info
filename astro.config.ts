@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import image from '@astrojs/image'
+import solid from '@astrojs/solid-js'
 
 import remarkBreaks from 'remark-breaks'
 import remarkMath from 'remark-math'
@@ -16,7 +17,7 @@ import rehypeCyrillicGreek from './src/lib/rehype-plugins/cyrillic-greek'
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx(), sitemap(), image({
+    integrations: [mdx(), sitemap(), solid(), image({
         serviceEntryPoint: '@astrojs/image/sharp'
     })],
     markdown: {

@@ -14,8 +14,10 @@
     "@astrojs/image": "^0.13.0",
     "@astrojs/mdx": "^0.15.0",
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/solid-js": "^2.0.0",
     "astro": "^2.0.0",
-    "date-fns": "^2.29.3"
+    "date-fns": "^2.29.3",
+    "solid-js": "^1.4.3"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
