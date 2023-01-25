@@ -1,4 +1,5 @@
 ---
+import { TwitterIcon, GitHubIcon, FeedIcon } from '../components/icons'
 export interface Props {
 	title: string
     path: string
@@ -59,9 +60,10 @@ declare global {
         <footer>
             <ul>
                 <li><a href="/about">About</a></li>
-                <li><a href="https://twitter.com/syobon_hinata">Twitter</a></li>
-                <li><a href="https://github.com/fabon-f">GitHub</a></li>
                 <li><a href="https://github.com/fabon-f/diary.fabon.info">source (GitHub)</a></li>
+                <li><a href="https://twitter.com/syobon_hinata"><TwitterIcon class="icon" /></a></li>
+                <li><a href="https://github.com/fabon-f"><GitHubIcon class="icon" /></a></li>
+                <li><a rel="external" href="/rss.xml" class="icon-link"><FeedIcon class="icon" /></a></li>
             </ul>
             <p><a href="/">Hebdomadary</a> by <a href="https://www.fabon.info">ふぁぼん</a></p>
         </footer>
@@ -107,5 +109,12 @@ declare global {
     }
     footer ul, footer p {
         margin-block: 0.5rem;
+    }
+    .icon-link {
+        color: inherit;
+    }
+    .icon {
+        height: 24px;
+        width: auto;
     }
 </style>

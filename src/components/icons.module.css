@@ -1,0 +1,14 @@
+.tw {
+    fill: #1D9BF0;
+}
+.gh {
+    fill: #24292f;
+}
+.inherit {
+    fill: currentColor;
+}
+@media (prefers-color-scheme:dark) {
+    .tw, .gh {
+        fill: #FFF;
+    }
+}
