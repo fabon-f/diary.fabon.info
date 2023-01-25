@@ -17,6 +17,7 @@ specifiers:
   remark-breaks: ^3.0.2
   remark-denden-ruby: ^0.2.0
   remark-math: ^5.1.1
+  rollup: ^3.10.1
   sharp: ^0.31.3
   shiki: ^0.12.1
   unist-builder: ^3.0.1
@@ -24,7 +25,7 @@ specifiers:
 
 dependencies:
   '@astrojs/image': 0.13.0_astro@2.0.0+sharp@0.31.3
-  '@astrojs/mdx': 0.15.0_astro@2.0.0
+  '@astrojs/mdx': 0.15.0_astro@2.0.0+rollup@3.10.1
   '@astrojs/sitemap': 1.0.0
   astro: 2.0.0_@types+node@18.11.18
   date-fns: 2.29.3
@@ -41,6 +42,7 @@ devDependencies:
   remark-breaks: 3.0.2
   remark-denden-ruby: 0.2.0
   remark-math: 5.1.1
+  rollup: 3.10.1
   sharp: 0.31.3
   shiki: 0.12.1
   unist-builder: 3.0.1
@@ -129,14 +131,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx/0.15.0_astro@2.0.0:
+  /@astrojs/mdx/0.15.0_astro@2.0.0+rollup@3.10.1:
     resolution: {integrity: sha512-KABnoWZJdtmzlbTbCJKLHRfX6fM9PS+BjSUSq/OHlkkejPUlmrZvGbDdN0Yfw1/gY/KDP48L7BLy/9VAk5Y/Wg==}
     engines: {node: '>=16.12.0'}
     dependencies:
       '@astrojs/markdown-remark': 2.0.0_astro@2.0.0
       '@astrojs/prism': 2.0.0
       '@mdx-js/mdx': 2.2.1
-      '@mdx-js/rollup': 2.2.1
+      '@mdx-js/rollup': 2.2.1_rollup@3.10.1
       acorn: 8.8.2
       es-module-lexer: 0.10.5
       estree-util-visit: 1.2.1
@@ -702,13 +704,14 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/rollup/2.2.1:
+  /@mdx-js/rollup/2.2.1_rollup@3.10.1:
     resolution: {integrity: sha512-wpGeK9iO7gPEIyC/ZTiggLY/MkEWDj5IWSsjlpkefgjb5RbmUukXU6/D2rHA+VAopxigS3NlaIL2ctpYBi4fmg==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
       '@mdx-js/mdx': 2.2.1
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@3.10.1
+      rollup: 3.10.1
       source-map: 0.7.4
       vfile: 5.3.6
     transitivePeerDependencies:
@@ -748,7 +751,7 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@rollup/pluginutils/5.0.2:
+  /@rollup/pluginutils/5.0.2_rollup@3.10.1:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -760,6 +763,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 3.10.1
     dev: false
 
   /@types/acorn/4.0.6:
@@ -1607,7 +1611,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: false
     optional: true
 
   /function-bind/1.1.1:
@@ -3240,7 +3243,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
