@@ -62,6 +62,7 @@ pre {
 main {
     max-width: 1000px;
     margin: auto;
+    padding-inline: 0.5rem;
 }
 .cyrillic, .greek {
     font-family: 'Open Sans', 'Helvetica Neue', Calibri, sans-serif;
