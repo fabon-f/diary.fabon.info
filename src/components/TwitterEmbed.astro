@@ -18,9 +18,22 @@ const html = await fetchTwitterEmbed(url)
         script.src = 'https://platform.twitter.com/widgets.js'
         document.head.appendChild(script)
     }
+    const lazyLoad = () => {
+        const twitterElements = document.querySelectorAll('.twitter-embed-wrapper')
+        if (twitterElements.length === 0) { return }
+
+        const observer = new IntersectionObserver(entries => {
+            if (entries.every(e => !e.isIntersecting)) { return }
+            observer.disconnect()
+            loadTwitterWidget()
+        })
+        for (let i = 0; i < twitterElements.length; i++) {
+            observer.observe(twitterElements[i]!)
+        }
+    }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadTwitterWidget)
+        document.addEventListener('DOMContentLoaded', lazyLoad)
     } else {
-        loadTwitterWidget()
+        lazyLoad()
     }
 </script>
