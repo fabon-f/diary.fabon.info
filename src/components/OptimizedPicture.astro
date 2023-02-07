@@ -25,7 +25,7 @@ const sizes = maxWidth === undefined ?
     `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`
 
 const widths = calculateWidths([1200, 1500], originalWidth)
-const formats = ['webp']
+const formats = ['webp' as 'webp']
 
 const displayWidth = maxWidth === undefined ? originalWidth : Math.min(toInt(maxWidth), originalWidth)
 const displayHeight = displayWidth * originalHeight / originalWidth
