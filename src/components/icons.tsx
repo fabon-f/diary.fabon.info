@@ -19,3 +19,17 @@ export const FeedIcon = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => (
         <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/>
     </svg>
 )
+
+export const LeftArrow = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => (
+    // https://iconmonstr.com/angel-left-thin-svg/
+    <svg {...props} width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z"/>
+    </svg>
+)
+
+export const RightArrow = (props: JSX.SvgSVGAttributes<SVGSVGElement>) => (
+    // https://iconmonstr.com/angel-right-thin-svg/
+    <svg {...props} width="24" height="24" viewBox="0 0 24 24" role="img">
+        <path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/>
+    </svg>
+)
