@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap'
 import image from '@astrojs/image'
 import solid from '@astrojs/solid-js'
 
+import { ecsstatic } from '@acab/ecsstatic/vite'
+
 import remarkBreaks from 'remark-breaks'
 import remarkMath from 'remark-math'
 import remarkDendenRuby from 'remark-denden-ruby'
@@ -40,5 +42,8 @@ export default defineConfig({
             rehypeCyrillicGreek
         ]
     },
-    site: "https://diary.fabon.info"
+    site: "https://diary.fabon.info",
+    vite: {
+        plugins: [ecsstatic()]
+    }
 })
