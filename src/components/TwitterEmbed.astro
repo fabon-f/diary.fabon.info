@@ -31,9 +31,6 @@ const html = await fetchTwitterEmbed(url)
             observer.observe(twitterElements[i]!)
         }
     }
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', lazyLoad)
-    } else {
-        lazyLoad()
-    }
+
+    lazyLoad()
 </script>
