@@ -22,11 +22,19 @@ export default defineConfig({
     integrations: [mdx(), sitemap(), solid(), image({
         serviceEntryPoint: '@astrojs/image/sharp'
     })],
+    build: {
+        inlineStylesheets: 'auto'
+    },
+    compressHTML: true,
     markdown: {
         syntaxHighlight: false,
         remarkPlugins: [
             remarkMath, remarkBreaks, remarkDendenRuby, remarkFootnoteTitle, remarkPlainCodeblock
         ],
+        remarkRehype: {
+            footnoteLabel: '脚注',
+            footnoteBackLabel: '本文に戻る'
+        },
         rehypePlugins: [
             rehypeKatex,
             [rehypeImgSize as any, { dir: 'public' }],
@@ -42,6 +50,7 @@ export default defineConfig({
             rehypeCyrillicGreek
         ]
     },
+    scopedStyleStrategy: 'class',
     site: "https://diary.fabon.info",
     vite: {
         plugins: [ecsstatic()]
