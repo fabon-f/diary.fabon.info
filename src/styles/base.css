@@ -70,8 +70,11 @@ main {
 
 
 /* article */
+:where(.prose) {
+    line-height: 1.75;
+}
 :where(.prose > * + *) {
-    margin-block-start: 1.5rem;
+    margin-block-start: 1rem;
 }
 
 :where(.prose h1) {
