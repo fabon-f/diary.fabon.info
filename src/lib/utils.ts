@@ -1,6 +1,6 @@
 import { basename, extname } from 'node:path'
 import * as cp from 'node:child_process'
-import { promisify, inspect } from 'node:util'
+import { promisify } from 'node:util'
 const execFile = promisify(cp.execFile)
 import { addDays, format } from 'date-fns'
 
