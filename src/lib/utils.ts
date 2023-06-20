@@ -1,6 +1,6 @@
 import { basename, extname } from 'node:path'
 import * as cp from 'node:child_process'
-import { promisify } from 'node:util'
+import { promisify, inspect } from 'node:util'
 const execFile = promisify(cp.execFile)
 import { addDays, format } from 'date-fns'
 
@@ -45,6 +45,7 @@ export async function getPublishDate(filePath: string, frontmatter: Record<strin
         return new Date(frontmatter['date'])
     }
     const { stdout } = await execFile('git', ['--no-pager', 'log', '--follow', '--format=%aI', '--', filePath])
+    console.log(`${filePath}: ${inspect(stdout)}`)
     const firstCommitDate = stdout.split('\n').filter(l => l !== '').at(-1)
     if (typeof firstCommitDate === 'string') {
         return new Date(firstCommitDate)
